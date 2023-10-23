@@ -1,0 +1,102 @@
+<ui:composition template="../WEB-INF/pages/main-temp.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="main-head">
+        <meta name="Description" content="Iranian Handwoven Carpets - Explore our exquisite collection at our online store"/>
+    </ui:define>
+    <ui:define name="main-body">
+        <div class="container-main">
+            <div class="d-block">
+                <div class="mb-4">
+                    <div class="slider-main-container slider-mainR">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h:graphicImage library="assets" styleClass="d-block" name="images/slider-main/h-5/s-1.jpg"/>
+                                </div>
+                                <div class="carousel-item">
+                                    <h:graphicImage library="assets" styleClass="d-block" name="images/slider-main/h-5/s-2.jpg"/>
+                                </div>
+                                <div class="carousel-item">
+                                    <h:graphicImage library="assets" styleClass="d-block" name="images/slider-main/h-5/s-3.jpg"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-categories">
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="d-img-fluid mb-3" name="images/category/camera.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+28 محصول</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="img-fluid mb-3" name="images/category/toys.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+48 محصول</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="img-fluid mb-3" name="images/category/shirt.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+69 محصول</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="img-fluid mb-3" name="images/category/sneakers.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+36 محصول</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="img-fluid mb-3" name="images/category/laptop.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+81 محصول</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- item -->
+                <div class="col-lg-2 col-6">
+                    <a href="#" class="category-card-vertical">
+                        <h:graphicImage library="assets" styleClass="img-fluid mb-3" name="images/category/cosmetics.png"/>
+                        <div class="card-inner text-center">
+                            <h6 class="card-title">کالای دیجیتال</h6>
+                            <div class="card-subtitle">+77 محصول</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+    <ui:define name="main-foot">
+    </ui:define>
+</ui:composition>
