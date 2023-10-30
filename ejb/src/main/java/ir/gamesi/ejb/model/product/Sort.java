@@ -1,4 +1,4 @@
-package model.product;
+package ir.gamesi.ejb.model.product;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

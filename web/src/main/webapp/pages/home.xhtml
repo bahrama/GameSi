@@ -46,13 +46,15 @@
                 </div>
                 <!-- item -->
                 <div class="col-lg-2 col-6">
-                    <a href="#" class="category-card-vertical">
+                        <h:link outcome="/pages/products.xhtml" styleClass="category-card-vertical">
                         <h:graphicImage library="assets" styleClass="d-img-fluid mb-3" name="images/category/camera.png"/>
                         <div class="card-inner text-center">
                             <h6 class="card-title">گیفت کارت های xbox</h6>
                             <div class="card-subtitle">+28 محصول</div>
                         </div>
-                    </a>
+                            <f:param name="giftType" value="xbox" />
+                            <f:param name="page" value="1" />
+                        </h:link>
                 </div>
                 <!-- item -->
                 <div class="col-lg-2 col-6">

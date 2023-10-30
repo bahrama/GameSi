@@ -3,7 +3,12 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+    <ui:define name="metadata">
+        <f:metadata>
+            <f:viewParam name="giftType"/>
+            <f:viewParam name="page" />
+        </f:metadata>
+    </ui:define>
     <ui:define name="main-head">
         <meta name="Description" content="Iranian Handwoven Carpets - Explore our exquisite collection at our online store"/>
     </ui:define>
@@ -29,6 +34,7 @@
                                         <div class="tab-pane fade show active" id="Most-visited" role="tabpanel"
                                              aria-labelledby="Most-visited-tab">
                                             <div class="row">
+                                                <ui:repeat value="#{homeViewManageBean.productDtosByType(giftType,page,2)}" var="prdc">
                                                 <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
                                                     <section class="product-box product product-type-simple">
                                                         <div class="thumb">
@@ -44,11 +50,11 @@
                                                                 <div class="discount-d">
                                                                     <span>20%</span>
                                                                 </div>
-                                                                        <h:graphicImage library="assets" name="images/slider-product/btt.jpg"/>
+                                                                        <h:graphicImage value="#{prdc.imgUrl}"/>
                                                             </a>
                                                         </div>
                                                         <div class="title">
-                                                            <a href="#">تی شرت آستین کوتاه تارکان کد btt 152-1</a>
+                                                            <a href="#">#{prdc.productName}</a>
                                                         </div>
                                                         <div class="price">
                                                         <span class="amount">58,000
@@ -57,349 +63,7 @@
                                                         </div>
                                                     </section>
                                                 </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="promotion-badge">فروش ویژه</div>
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <div class="discount-d">
-                                                                    <span>10%</span>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/boxing.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">تی شرت ورزشی نخی مردانه فلوریزا طرح بوکس کد boxing
-                                                                002M تیشرت</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">40,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/Avocado.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">آب میوه گیری پارس خزر مدل Avocado</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">6,000,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/honer.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">هواوی هانر ویوو 20 – 256 گیگابایت – دو سیم کارت</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">4,200,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/zenbook.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">لپ تاپ 13 اینچی ایسوس مدل ZenBook S13 UX392FN -
-                                                                A</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">6,000,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="promotion-badge">فروش ویژه</div>
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                </div>
-                                                                <div class="discount-d">
-                                                                    <span>10%</span>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/camera-nikon-3500D.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">
-                                                                دوربین دیجیتال نیکون مدل D3500 به همراه لنز 18-55 میلی متر
-                                                                VR AF-P
-                                                            </a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">2,000,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/Stove-lopez.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">اجاق گاز طرح فر لوپز مدل 10000S</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">10,500,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="promotion-badge">فروش ویژه</div>
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <div class="discount-d">
-                                                                    <span>10%</span>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/SL1200_-300x300.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">لپ تاپ چووی الترابوک 14 اینچ پرو</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">2,500,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/iphone-xs-max-space.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">
-                                                                اپل آیفون ایکس اس مکس – 256 گیگابایت – دو سیم کارت
-                                                            </a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">2,000,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/ECM2013.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">اسپرسوساز مباشی مدل ECM2013</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">2,000,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="promotion-badge">فروش ویژه</div>
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <div class="discount-d">
-                                                                    <span>15%</span>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/t-shirt-1.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">تی شرت به رسم طرح دریم کچر کد 558</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">32,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/camera-instax-mini-70.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">
-                                                                دوربین عکاسی چاپ سریع فوجی فیلم مدل Instax mini 70
-                                                            </a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">4,200,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="promotion-badge">فروش ویژه</div>
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <div class="discount-d">
-                                                                    <span>25%</span>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/DNR 290T-366T.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">یخچال و فریزر دو قلوی دونار مدل DNR 290T-366T</a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">4,200,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                                <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
-                                                    <section class="product-box product product-type-simple">
-                                                        <div class="thumb">
-                                                            <a href="#" class="d-block">
-                                                                <div class="product-rate">
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star active"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </div>
-                                                                <h:graphicImage library="assets" name="images/slider-product/Samsung-S10Plus.jpg"/>
-                                                            </a>
-                                                        </div>
-                                                        <div class="title">
-                                                            <a href="#">
-                                                                سامسونگ گلکسی اس 10 پلاس – 128 گیگابایت – دو سیم کارت
-                                                            </a>
-                                                        </div>
-                                                        <div class="price">
-                                                        <span class="amount">10,500,000
-                                                            <span>تومان</span>
-                                                        </span>
-                                                        </div>
-                                                    </section>
-                                                </div>
+                                                </ui:repeat>
                                             </div>
                                         </div>
                                     </div>

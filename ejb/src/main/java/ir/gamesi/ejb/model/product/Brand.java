@@ -1,4 +1,4 @@
-package model.product;
+package ir.gamesi.ejb.model.product;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-public class FixedRecipientToSenderDenominationsMap implements Serializable {
-    public Double res;
+public class Brand implements Serializable {
+    private int brandId;
+    private String brandName;
 }
