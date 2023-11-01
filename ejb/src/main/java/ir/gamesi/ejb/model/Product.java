@@ -15,7 +15,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @NamedQueries(
         {
-                @NamedQuery(name = Product.FIND_BY_SEARCH_PRODUCT, query = "select p from product p")
+                @NamedQuery(name = Product.FIND_BY_SEARCH_PRODUCT,
+                        query = "select p from product p")
         }
 )
 public class Product extends BaseEntity{

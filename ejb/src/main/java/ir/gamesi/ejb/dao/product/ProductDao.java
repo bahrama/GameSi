@@ -13,7 +13,6 @@ public class ProductDao  extends BaseDaoImpl<Product> {
     public ProductDao(){
         setModelClass(Product.class);
         setClassName("product");
-        setSearchParam(Product.FIND_BY_SEARCH_PRODUCT);
     }
 
 

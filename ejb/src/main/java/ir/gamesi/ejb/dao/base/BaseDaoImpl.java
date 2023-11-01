@@ -18,7 +18,6 @@ public abstract class BaseDaoImpl<T extends BaseEntity>{
 
     private String className;
 
-    private String searchParam;
 
 
     public void setModelClass(Class<T> modelClass) {
@@ -28,15 +27,6 @@ public abstract class BaseDaoImpl<T extends BaseEntity>{
     public void setClassName(String className) {
         this.className = className;
     }
-
-    public void setSearchParam(String searchParam) {
-        this.searchParam = searchParam;
-    }
-
-    private String getClassName(){
-        return getClass().getName();
-    }
-
 
     public Optional<T> findById(Long id){
         if(id!=null) {
@@ -72,7 +62,27 @@ public abstract class BaseDaoImpl<T extends BaseEntity>{
     }
 
     public List<T> search(int offset, int pageSize, Map<String, String> sortBy, Map<String, String> filterBy) {
-        Query query = em.createNamedQuery(searchParam, this.modelClass);
+        String q = "select e from "+ this.className +  " e where 1=1\n";
+        StringBuilder queryStatement = new StringBuilder(q);
+        if(filterBy.size()>0){
+            filterBy.forEach((k,v) ->{
+                queryStatement.append(" and e." + k + " like :v_" + k + " \n");
+            });
+        }
+        if(sortBy.size()>0) queryStatement.append("order by ");
+        sortBy.forEach((k,v)->{
+            queryStatement.append("e." + k + " ");
+            if(v.equals("ASCENDING"))
+            queryStatement.append("ASC");
+            else
+            queryStatement.append("DESC");
+        });
+        Query query = em.createQuery(queryStatement.toString(), this.modelClass);
+        if(filterBy.size()>0){
+            filterBy.forEach((k,v) ->{
+                query.setParameter("v_" + k ,"%" + v + "%");
+            });
+        }
         query.setFirstResult(offset);
         query.setMaxResults(pageSize);
         List<T> entities = query.getResultList();
