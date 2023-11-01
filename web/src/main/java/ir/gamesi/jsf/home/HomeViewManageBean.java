@@ -1,7 +1,5 @@
-package ir.gamesi.jsf.home.api;
+package ir.gamesi.jsf.home;
 
-import ir.gamesi.ejb.dto.api.product.ProductDto;
-import ir.gamesi.ejb.service.api.product.ProductApiService;
 import jakarta.annotation.Resource;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
@@ -19,14 +17,8 @@ import java.util.Properties;
 @ViewScoped
 @Named
 public class HomeViewManageBean implements Serializable {
-    @Inject
-    private ProductApiService productApiService;
     @Resource(name = "java:jboss/mail/Default")
     private Session sessionSend;
-    public List<ProductDto> productDtosByType(String param,int page,int limit){
-        actBoss();
-        return productApiService.findProducts(param,page,limit);
-    }
 
     public void actBoss() {
         Properties prop = new Properties();

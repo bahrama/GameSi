@@ -1,10 +1,8 @@
-package ir.gamesi.ejb.service.api.product;
+/*
+package ir.gamesi.ejb.test;
 
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
-import ir.gamesi.ejb.dto.api.product.ProductDto;
-import ir.gamesi.ejb.dto.api.product.ProductDtoManager;
-import ir.gamesi.ejb.model.product.ProductRes;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.ws.rs.client.Client;
@@ -19,7 +17,8 @@ import java.util.List;
 @LocalBean
 public class ProductApiService {
 
-    private int count;
+*/
+/*    private int count;
     public List<ProductDto> findProducts(String titreSearch , int page , int limit){
         String url = "http://localhost:8090/api/products/" + titreSearch;
         Client client = ClientBuilder.newClient();
@@ -40,5 +39,7 @@ public class ProductApiService {
 
     public int countHome() {
         return count;
-    }
+    }*//*
+
 }
+*/
