@@ -1,5 +1,7 @@
 package ir.gamesi.ejb.service.product;
 
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import ir.gamesi.ejb.dao.product.ProductDao;
 import ir.gamesi.ejb.dto.product.ProductDto;
 import ir.gamesi.ejb.dto.product.ProductDtoManager;
@@ -7,12 +9,13 @@ import ir.gamesi.ejb.model.Product;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.mapstruct.factory.Mappers;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Stateless
 @LocalBean
@@ -47,5 +50,27 @@ public class ProductService {
 
     public Long delete(ProductDto productDto){
         return productDao.delete(productDtoManager.transferProductDtoToEntity(productDto));
+    }
+
+    public List<ProductDto> findProductByParam(String param){
+        String url = "http://localhost:8090/api/products/" + param;
+        Client client = ClientBuilder.newClient();
+        Response response = client.target(url)
+                .request(MediaType.APPLICATION_JSON)
+                .get();
+        String json=response.readEntity(String.class);
+        Gson gson = new Gson();
+        List<LinkedTreeMap<String,Object>> productReses = gson.fromJson(json,List.class);
+        List<ProductDto> productDtos = new ArrayList<>();
+        productReses.stream().forEach(p->{
+           // productDtos.add(ProductDtoManager.productToDto(treeMap));
+            ProductDto productDto = new ProductDto();
+            productDto.setId(((Double) p.get("id")).longValue());
+            productDto.setProductId(((Double) p.get("productId")).intValue());
+            productDto.setProductName((String) p.get("productName"));
+            productDto.setPic1("");
+            productDtos.add(productDto);
+        });
+        return productDtos;
     }
 }

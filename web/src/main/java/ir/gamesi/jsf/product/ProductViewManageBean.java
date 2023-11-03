@@ -18,6 +18,7 @@ import org.primefaces.model.file.UploadedFile;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.List;
 
 @ViewScoped
 @Named
@@ -90,4 +91,7 @@ public class ProductViewManageBean implements Serializable {
         return productDto;
     }
 
+    public List<ProductDto> findProductByParam(String param){
+       return productService.findProductByParam(param);
+    }
 }

@@ -55,4 +55,6 @@ public class Product extends BaseEntity{
     private String description;
     @Column(name="main_site" , length = 2000)
     private String mainSite;
+    @Column(name="description_per")
+    private String descriptionPer;
 }

@@ -17,6 +17,7 @@
     <h:outputStylesheet library="assets" name="css/vendor/jquery.jqZoom.css"/>
     <h:outputStylesheet library="assets" name="css/main.css"/>
     <h:outputStylesheet library="assets" name="css/responsive.css"/>
+    <link rel="stylesheet" href="/Images/fonts.css"/>
     <ui:insert name="main-head"/>
 </h:head>
 <h:body>
@@ -24,102 +25,29 @@
     <header class="header-main">
         <div class="d-block">
             <section class="h-main-row">
-                <div class="col-lg-9 col-md-12 col-xs-12 pr">
+                <div class="col-lg-11 col-md-12 col-xs-12 pr">
                     <div class="header-right">
                         <div class="col-lg-3 pr">
-                            <div class="header-logo row text-right">
-                                <a href="#">
-                                            <h:graphicImage library="assets" name="images/logo.png"/>
-                                </a>
+                            <div>
+                                            <h:graphicImage style="width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  margin-left: 5px;max-width: 90%;" library="assets" name="images/brand.jpg"/>
                             </div>
                         </div>
                         <div class="col-lg-8 pr">
                             <div class="header-search row text-right">
-                                <div class="header-search-box">
-                                    <form action="#" class="form-search">
-                                        <input type="search" class="header-search-input" name="search-input"
-                                               placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…"/>
-                                        <div class="action-btns">
-                                            <button class="btn btn-search" type="submit">
-                                                        <h:graphicImage library="assets" name="images/search.png"/>
-                                            </button>
-                                            <div class="search-filter">
-                                                <div class="form-ui">
-                                                    <div class="custom-select-ui">
-                                                        <select class="right">
-                                                            <option>همه دسته ها</option>
-                                                            <option>کالای دیجیتال</option>
-                                                            <option>آرایشی بهداشتی</option>
-                                                            <option>ابزاری اداری</option>
-                                                            <option>مد پوشاک</option>
-                                                            <option>خانه آشپز خانه</option>
-                                                            <option>لوازم تحریر و هنر</option>
-                                                            <option>کودک و نوزاد</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="search-result">
-                                        <ul class="search-result-list mb-0">
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    کالای دیجیتال
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    آرایشی و بهداشتی
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    گوشی موبایل
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    تبلت
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    لپ تاپ
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="mdi mdi-clock-outline"></i>
-                                                    دوربین
-                                                    <button class="btn btn-light btn-continue-search" type="submit">
-                                                        <i class="fa fa-angle-left"></i>
-                                                    </button>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="localSearchSimple"></div>
-                                    </div>
+                                <div class="header-search-box" style="margin-top: 20px;">
+                                    <h:form styleClass="form-search">
+                                        <h:inputText />
+                                        <h:commandButton style="float: left;" value="SEARCH" styleClass="btn btn-search"/>
+                                    </h:form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-0 col-xs-12 pl">
+                <div class="col-lg-1 col-md-0 col-xs-12 pl">
                     <div class="header-left">
                         <div class="header-account text-left">
                             <div class="d-block">
@@ -157,20 +85,20 @@
                     <div class="align-items-center">
                         <ul class="menu-ul mega-menu-level-one">
                             <li id="nav-menu-item" class="menu-item">
-                                <a href="#" class="current-link-menu">
+                                <h:link styleClass="current-link-menu font-IransansBold">
                                     خانه
-                                </a>
+                                </h:link>
                             </li>
                             <li id="nav-menu-item" class="menu-item nav-overlay">
-                                <a href="#" class="current-link-menu">
+                                    <h:link styleClass="current-link-menu font-IransansBold">
                                     گیفت کارت
                                     <i class="fa fa-angle-down"></i>
-                                </a>
+                                    </h:link>
                                 <ul class="sub-menu is-mega-menu mega-menu-level-two">
                                     <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            گیمینگ
-                                        </a>
+                                        <h:link styleClass="mega-menu-link font-IransansBold">
+                                            گیفت کارت های playstation
+                                        </h:link>
                                         <ul class="sub-menu mega-menu-level-three">
                                             <li class="menu-mega-item-three">
                                                 <a href="#">
@@ -195,9 +123,9 @@
                                         </ul>
                                     </li>
                                     <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            موبایل
-                                        </a>
+                                        <h:link styleClass="mega-menu-link font-IransansBold">
+                                            گیفت کارت های xbox
+                                        </h:link>
                                         <ul class="sub-menu mega-menu-level-three">
                                             <li class="menu-mega-item-three">
                                                 <a href="#">
@@ -212,9 +140,9 @@
                                         </ul>
                                     </li>
                                     <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            vod
-                                        </a>
+                                        <h:link styleClass="mega-menu-link font-IransansBold">
+                                            گیفت کارت های steam
+                                        </h:link>
                                         <ul class="sub-menu mega-menu-level-three">
                                             <li class="menu-mega-item-three">
                                                 <a href="#">
@@ -234,9 +162,9 @@
                                         </ul>
                                     </li>
                                     <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            Music
-                                        </a>
+                                        <h:link styleClass="mega-menu-link font-IransansBold">
+                                            گیفت کارت های بازی های موبایل
+                                        </h:link>
                                         <ul class="sub-menu mega-menu-level-three">
                                             <li class="menu-mega-item-three">
                                                 <a href="#">
@@ -245,115 +173,72 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="bg-image">
-                                        <h:graphicImage library="assets" name="images/menu-main/digital.png"/>
+                                    <li class="menu-mega-item menu-item-type-mega-menu">
+                                        <h:link styleClass="mega-menu-link font-IransansBold">
+                                            گیفت کارت های ارز دیجیتال
+                                        </h:link>
+                                        <ul class="sub-menu mega-menu-level-three">
+                                            <li class="menu-mega-item-three">
+                                                <a href="#">
+                                                    Spotify
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li id="nav-menu-item" class="menu-item nav-overlay">
-                                <a href="#" class="current-link-menu">
+                                <h:link styleClass="current-link-menu font-IransansBold">
                                     بلاگ ها
                                     <i class="fa fa-angle-down"></i>
-                                </a>
+                                </h:link>
                                 <ul class="sub-menu is-mega-menu mega-menu-level-two">
                                     <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            گیمینگ
-                                        </a>
                                         <ul class="sub-menu mega-menu-level-three">
                                             <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Crunchyroll Subscription
-                                                </a>
+                                                <h:link>
+                                                    گیفت کارت های playstation
+                                                </h:link>
                                             </li>
                                             <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Cherry Credits
-                                                </a>
+                                                <h:link>
+                                                    گیفت کارت های xbox
+                                                </h:link>
                                             </li>
                                             <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Blizzard Battle
-                                                </a>
+                                                <h:link>
+                                                    گیفت کارت های steam
+                                                </h:link>
                                             </li>
                                             <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Adurite
-                                                </a>
+                                                <h:link>
+                                                    گیفت کارت های بازی های موبایل
+                                                </h:link>
+                                            </li>
+                                            <li class="menu-mega-item-three">
+                                                <h:link>
+                                                    گیفت کارت های ارز دیجیتال
+                                                </h:link>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            موبایل
-                                        </a>
-                                        <ul class="sub-menu mega-menu-level-three">
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Apple iTunes
-                                                </a>
-                                            </li>
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Google Play
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            vod
-                                        </a>
-                                        <ul class="sub-menu mega-menu-level-three">
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Disney Plus Subscription
-                                                </a>
-                                            </li>
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Hulu
-                                                </a>
-                                            </li>
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Netflix
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-mega-item menu-item-type-mega-menu">
-                                        <a href="#" class="mega-menu-link">
-                                            Music
-                                        </a>
-                                        <ul class="sub-menu mega-menu-level-three">
-                                            <li class="menu-mega-item-three">
-                                                <a href="#">
-                                                    Spotify
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="bg-image">
-                                        <h:graphicImage library="assets" name="images/menu-main/digital.png"/>
                                     </li>
                                 </ul>
                             </li>
                             <li id="nav-menu-item" class="menu-item">
-                                <a href="#" class="current-link-menu">
+                                <h:link styleClass="current-link-menu font-IransansBold">
                                     درباره ما
-                                </a>
+                                </h:link>
                             </li>
                             <li id="nav-menu-item" class="menu-item">
-                                <a href="#" class="current-link-menu">
+                                <h:link styleClass="current-link-menu font-IransansBold">
                                     تماس با ما
-                                </a>
+                                </h:link>
                             </li>
                             <li class="divider-space-card">
                                 <div class="header-cart-basket">
                                     <a href="#" class="cart-basket-box">
                                         <span class="icon-cart">
-                                            <i class="mdi mdi-shopping"></i>
+                                            <i class="fa fa-shopping-basket"></i>
                                         </span>
                                         <span class="title-cart">سبد خرید</span>
                                         <span class="price-cart">25,000,000
@@ -440,12 +325,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="header-cart-interest">
-                                    <a href="#" class="d-block">
-                                        <i class="fa fa-heart"></i>
-                                        <span class="counter">۲</span>
-                                    </a>
-                                </div>
                             </li>
                         </ul>
                     </div>
@@ -456,54 +335,20 @@
                     <div class="header-cover"></div>
                     <div class="logo-wrap">
                         <a class="logo-icon" href="#">
-                            <h:graphicImage library="assets" name="images/logo.png" width="40"/>
+                            <h:graphicImage library="assets" name="images/brand.jpg" width="40"/>
                         </a>
                     </div>
                 </div>
                 <ul class="nav-categories ul-base">
-                    <li>
-                        <a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
-                           aria-expanded="false" aria-controls="collapseOne"><i class="mdi mdi-chevron-down"></i>کالای
-                            دیجیتال</a>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                             data-parent="#accordionExample" style="">
-                            <ul>
-                                <li class="has-sub"><a href="#" class="category-level-2">لوازم جانبی گوشی</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
-                                        <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
-                                        <li><a href="#" class="category-level-3">پایه نگهدارنده گوشی</a></li>
-                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">گوشی موبایل</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">سامسونگ</a></li>
-                                        <li><a href="#" class="category-level-3">هوآوی</a></li>
-                                        <li><a href="#" class="category-level-3">اپل</a></li>
-                                        <li><a href="#" class="category-level-3">شیائومی</a></li>
-                                        <li><a href="#" class="category-level-3">آنر</a></li>
-                                        <li><a href="#" class="category-level-3">نوکیا</a></li>
-                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">دوربین</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
-                                        <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
-                                        <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li><a href="#">خانه</a></li>
                     <li><a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                           aria-expanded="false" aria-controls="collapseTwo"><i class="mdi mdi-chevron-down"></i>آرایشی
-                        و بهداشتی</a>
+                           aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-plus"></i>
+                        گیفت کارت
+                    </a>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                              data-parent="#accordionExample" style="">
                             <ul>
-                                <li class="has-sub"><a href="#" class="category-level-2">لوازم جانبی گوشی</a>
+                                <li class="has-sub"><a href="#" class="category-level-2">  گیفت کارت های playstation</a>
                                     <ul>
                                         <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
                                         <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
@@ -511,7 +356,7 @@
                                         <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">گوشی موبایل</a>
+                                <li class="has-sub"><a href="#" class="category-level-2">گیفت کارت های xbox</a>
                                     <ul>
                                         <li><a href="#" class="category-level-3">سامسونگ</a></li>
                                         <li><a href="#" class="category-level-3">هوآوی</a></li>
@@ -522,55 +367,64 @@
                                         <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">دوربین</a>
+                                <li class="has-sub"><a href="#" class="category-level-2">گیفت کارت های steam</a>
                                     <ul>
                                         <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
                                         <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
                                         <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
                                     </ul>
                                 </li>
+                                <li class="has-sub"><a href="#" class="category-level-2">گیفت کارت های بازی های موبایل</a>
+                                    <ul>
+                                        <li><a href="#" class="category-level-3">سامسونگ</a></li>
+                                        <li><a href="#" class="category-level-3">هوآوی</a></li>
+                                        <li><a href="#" class="category-level-3">اپل</a></li>
+                                        <li><a href="#" class="category-level-3">شیائومی</a></li>
+                                        <li><a href="#" class="category-level-3">آنر</a></li>
+                                        <li><a href="#" class="category-level-3">نوکیا</a></li>
+                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub"><a href="#" class="category-level-2">گیفت کارت های ارز دیجیتال</a>
+                                    <ul>
+                                        <li><a href="#" class="category-level-3">سامسونگ</a></li>
+                                        <li><a href="#" class="category-level-3">هوآوی</a></li>
+                                        <li><a href="#" class="category-level-3">اپل</a></li>
+                                        <li><a href="#" class="category-level-3">شیائومی</a></li>
+                                        <li><a href="#" class="category-level-3">آنر</a></li>
+                                        <li><a href="#" class="category-level-3">نوکیا</a></li>
+                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#">ابزار و اداری</a></li>
-                    <li><a href="#">مد و پوشاک</a></li>
-                    <li><a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                           aria-expanded="false" aria-controls="collapseThree"><i class="mdi mdi-chevron-down"></i>خانه
-                        و آشپزخانه</a>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                    <li>
+                        <a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+                           aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-plus"></i>
+                            بلاگ
+                        </a>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
                              data-parent="#accordionExample" style="">
                             <ul>
-                                <li class="has-sub"><a href="#" class="category-level-2">لوازم جانبی گوشی</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
-                                        <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
-                                        <li><a href="#" class="category-level-3">پایه نگهدارنده گوشی</a></li>
-                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
-                                    </ul>
+                                <li><a href="#" class="category-level-2">گیفت کارت های playstation</a>
                                 </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">گوشی موبایل</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">سامسونگ</a></li>
-                                        <li><a href="#" class="category-level-3">هوآوی</a></li>
-                                        <li><a href="#" class="category-level-3">اپل</a></li>
-                                        <li><a href="#" class="category-level-3">شیائومی</a></li>
-                                        <li><a href="#" class="category-level-3">آنر</a></li>
-                                        <li><a href="#" class="category-level-3">نوکیا</a></li>
-                                        <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
-                                    </ul>
+                                <li><a href="#" class="category-level-2">گیفت کارت های xbox</a>
                                 </li>
-                                <li class="has-sub"><a href="#" class="category-level-2">دوربین</a>
-                                    <ul>
-                                        <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
-                                        <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
-                                        <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
-                                    </ul>
+                                <li><a href="#" class="category-level-2">گیفت کارت های steam</a>
+                                </li>
+                                <li><a href="#" class="category-level-2">گیفت کارت های بازی های موبایل</a>
+                                </li>
+                                <li><a href="#" class="category-level-2">گیفت کارت های ارز دیجیتال</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#">لوازم تحریر و هنر</a></li>
-                    <li><a href="#">کودک و نوزاد</a></li>
+
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">ورود</a></li>
+                    <li><a href="#">ثبت نام</a></li>
                 </ul>
             </nav>
             <div class="nav-btn nav-slider">
@@ -721,49 +575,6 @@
     <ui:insert name="main-body"/>
     <footer class="footer-main-site">
         <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
-            <div class="footer-shopping-features">
-                <div class="container-fluid">
-                    <div class="col-12">
-                        <div class="item">
-                            <span class="icon-shopping">
-                                <h:graphicImage library="assets" name="images/footer/features/delivery-truck.svg" width="50"/>
-                            </span>
-                            <span class="title-shopping">تحویل اکسپرس</span>
-                            <span class="desc-shopping">در کمترین زمان دریافت کنید</span>
-                        </div>
-                        <div class="item">
-                            <span class="icon-shopping">
-                        <h:graphicImage library="assets" name="images/footer/features/24-hours-support.svg" width="50"/>
-                            </span>
-                            <span class="title-shopping">پشتیبانی ۲۴ ساعته</span>
-                            <span class="desc-shopping">پشتیبانی هفت روز هفته</span>
-                        </div>
-                        <div class="item">
-                            <span class="icon-shopping">
-                               <h:graphicImage library="assets" name="images/footer/features/income.svg" width="50"/>
-                            </span>
-                            <span class="title-shopping">پرداخت در محل</span>
-                            <span class="desc-shopping">هنگام دریافت پرداخت کنید</span>
-                        </div>
-                        <div class="item">
-                            <span class="icon-shopping">
-                         <h:graphicImage library="assets" styleClass="img-shopping" name="images/footer/features/easy-return.svg" width="50"/>
-                            </span>
-                            <span class="title-shopping">۷ روز ضمانت بازگشت</span>
-                            <span class="desc-shopping">هفت روز مهلت دارید </span>
-                        </div>
-                        <div class="item">
-                            <span class="icon-shopping">
-                           <h:graphicImage library="assets" styleClass="img-shopping" name="images/footer/features/original.svg" width="50"/>
-                            </span>
-                            <span class="title-shopping">ضمانت اصل‌بودن کالا</span>
-                            <span class="desc-shopping">تایید اصالت کالا</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
             <div class="container-fluid">
                 <div class="col-12">
                     <div class="footer-middlebar">
@@ -774,28 +585,38 @@
                                         <section class="footer-links-col">
                                             <div class="headline-links">
                                                 <a href="#">
-                                                    با کالامارکت
+                                                    سایت گیمسی
                                                 </a>
                                             </div>
                                             <ul class="footer-menu-ul">
                                                 <li class="menu-item-type-custom">
                                                     <a href="#">
-                                                        اتاق خبر کالامارکت
+                                                        گیفت کارت ها
                                                     </a>
                                                 </li>
                                                 <li class="menu-item-type-custom">
                                                     <a href="#">
-                                                        فروش در کالامارکت
+                                                        بلاگ ها
                                                     </a>
                                                 </li>
                                                 <li class="menu-item-type-custom">
                                                     <a href="#">
-                                                        همکاری با سازمان‌ها
+                                                       درباره ما
                                                     </a>
                                                 </li>
                                                 <li class="menu-item-type-custom">
                                                     <a href="#">
-                                                        فرصت‌های شغلی
+                                                        تماس با ما
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        ورود
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        ثبت نام
                                                     </a>
                                                 </li>
                                             </ul>
@@ -840,7 +661,7 @@
                                         <section class="footer-links-col">
                                             <div class="headline-links">
                                                 <a href="#">
-                                                    راهنمای خرید از کالامارکت
+                                                    راهنمای خرید از گیمسی
                                                 </a>
                                             </div>
                                             <ul class="footer-menu-ul">
@@ -884,13 +705,8 @@
                             <div class="col-lg-10 pr">
                                 <div class="footer-content d-block">
                                     <div class="text pr-1">
-                                        <h2 class="title">فروشگاه اینترنتی کالامارکت</h2>
-                                        <p class="desc"> کالامارکت به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی
-                                            با بیش از یک دهه تجربه، با پایبندی به سه اصل کلیدی، پرداخت در محل، 7 روز
-                                            ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با
-                                            فروشگاه‌های معتبر جهان، به بزرگ‌ترین فروشگاه اینترنتی ایران تبدیل شود.
-                                            به محض ورود به کالامارکت با یک سایت پر از کالا رو به رو می‌شوید! هر
-                                            آنچه که نیاز دارید و به ذهن شما خطور می‌کند در اینجا پیدا خواهید کرد.
+                                        <h2 class="title">فروشگاه گیفت کارت و وسایل بازی گیمسی</h2>
+                                        <p class="desc"> فروشگاه گیمسی عرضه گیفت کارت و وسایل بازی با بهترین قیمت در ایران
                                         </p>
                                     </div>
                                 </div>
@@ -927,7 +743,7 @@
                             </div>
                             <div class="footer-copyright">
                                 <div class="footer-copyright-text">
-                                    <p>تمامی مطالب، عکس ها و... متعلق به سایت فروشگاهی کالامارکت می باشد.</p>
+                                    <p>تمامی مطالب، عکس ها و... متعلق به سایت گیمسی می باشد.</p>
                                 </div>
                             </div>
                         </div>
@@ -938,7 +754,9 @@
     </footer>
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" >
+                dsdsd
+            </path>
         </svg>
     </div>
     <div class="P-loader">

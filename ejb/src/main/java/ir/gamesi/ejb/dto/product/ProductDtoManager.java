@@ -21,6 +21,7 @@ public interface ProductDtoManager {
     @Mapping(source = "countryCode" , target = "countryCode")
     @Mapping(source = "countryName" , target = "countryName")
     @Mapping(source = "mainSite" , target = "mainSite")
+    @Mapping(source = "descriptionPer" , target = "descriptionPer")
     ProductDto transferProductToDto(Product product);
 
     @InheritInverseConfiguration

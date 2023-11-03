@@ -27,5 +27,5 @@ public class ProductDto {
     private String mainSite;
     private Date createDate;
     private Date updateDate;
-
+    private String descriptionPer;
 }

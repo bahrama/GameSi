@@ -1,0 +1,23 @@
+﻿@charset 'UTF-8';
+
+@font-face {
+	font-family: 'IRANSansBold';
+	font-style: normal;
+	font-weight: bold;
+	src: url('/Images/IRANSansWeb_Bold.eot');
+	src: url('/Images/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('/Images/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('/Images/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('/Images/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'IRANSansNor';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/Images/IRANSansWeb_UltraLight.eot');
+	src: url('/Images/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('/Images/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('/Images/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('/Images/IRANSansWeb_UltraLight.ttf') format('truetype');
+}

@@ -9605,3 +9605,19 @@ body.light .progress-wrap::after {
 body.light .progress-wrap svg.progress-circle path {
     stroke: var(--black-blue);
 }
+
+.font-IransansBold{
+    font-family: 'IRANSansBold'!important;
+}
+.font-IransansNor{
+    font-family: 'IRANSansNor'!important;
+}
+p{
+    font-family: 'IRANSansNor'!important;
+}
+.custom-shadow{
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
