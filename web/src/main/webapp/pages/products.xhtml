@@ -34,7 +34,7 @@
                                         <div class="tab-pane fade show active" id="Most-visited" role="tabpanel"
                                              aria-labelledby="Most-visited-tab">
                                             <div class="row">
-                                                <ui:repeat value="#{productViewManageBean.findProductByParam(giftType)}" var="prdc">
+                                                <ui:repeat value="#{productViewManageBean.findProductByParam(giftType,page)}" var="prdc">
                                                 <div class="col-lg-3 col-md-3 col-xs-12 order-1 d-block mb-3">
                                                     <section class="product-box product product-type-simple">
                                                         <div class="thumb">
@@ -71,24 +71,55 @@
                                 <div class="pagination-product">
                                     <nav aria-label="Page navigation example">
                                         <ul class="pagination">
+                                            <h:panelGroup rendered="#{page ne 1}">
                                             <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Previous">
-                                                    <span aria-hidden="true"></span>
-                                                </a>
+                                                <h:link outcome="/pages/products.xhtml" styleClass="page-link">
+                                                    1
+                                                    <f:param name="giftType" value="#{giftType}" />
+                                                    <f:param name="page" value="#{1}" />
+                                                </h:link>
+                                            </li>
+                                            </h:panelGroup>
+                                            <li class="page-item">
+                                                <h:link outcome="/pages/products.xhtml" styleClass="page-link">
+                                                    #{productViewManageBean.rightArrow()}
+                                                    <f:param name="giftType" value="#{giftType}" />
+                                                    <f:param name="page" value="#{page-1}" />
+                                                </h:link>
+                                            </li>
+                                            <ui:repeat size="#{productViewManageBean.limitSize(productViewManageBean.findLastPage(giftType),page)}" value="#{productViewManageBean.findPagination(giftType,page)}" var="pgs">
+                                            <h:panelGroup rendered="#{page eq pgs}">
+                                                <li class="page-item">
+                                                    <h:link outcome="/pages/products.xhtml" styleClass="page-link active">
+                                                        #{pgs}
+                                                        <f:param name="giftType" value="#{giftType}" />
+                                                        <f:param name="page" value="#{pgs}" />
+                                                    </h:link>
+                                                </li>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{page ne pgs}">
+                                                <li class="page-item">
+                                                    <h:link outcome="/pages/products.xhtml" styleClass="page-link">
+                                                        #{pgs}
+                                                        <f:param name="giftType" value="#{giftType}" />
+                                                        <f:param name="page" value="#{pgs}" />
+                                                    </h:link>
+                                                </li>
+                                            </h:panelGroup>
+                                            </ui:repeat>
+                                            <li class="page-item">
+                                                <h:link outcome="/pages/products.xhtml" styleClass="page-link">
+                                                    #{productViewManageBean.leftArrow()}
+                                                    <f:param name="giftType" value="#{giftType}" />
+                                                    <f:param name="page" value="#{page +1}" />
+                                                </h:link>
                                             </li>
                                             <li class="page-item">
-                                                <a class="page-link active" href="#">1</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">2</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">3</a>
-                                            </li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true"></span>
-                                                </a>
+                                                <h:link outcome="/pages/products.xhtml" styleClass="page-link">
+                                                    #{productViewManageBean.findLastPage(giftType)}
+                                                    <f:param name="giftType" value="#{giftType}" />
+                                                    <f:param name="page" value="#{productViewManageBean.findLastPage(giftType)}" />
+                                                </h:link>
                                             </li>
                                         </ul>
                                     </nav>

@@ -18,7 +18,9 @@ import org.primefaces.model.file.UploadedFile;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @ViewScoped
 @Named
@@ -39,6 +41,7 @@ public class ProductViewManageBean implements Serializable {
 
     @Inject
     private ProductService productService;
+
 
     @PostConstruct
     public void init(){
@@ -91,7 +94,40 @@ public class ProductViewManageBean implements Serializable {
         return productDto;
     }
 
-    public List<ProductDto> findProductByParam(String param){
-       return productService.findProductByParam(param);
+    public List<ProductDto> findProductByParam(String param , int page){
+        productService.findProductByParamSize(param);
+       return productService.findProductByParam(param , page);
+    }
+
+    public List<Integer> findPagination(String param ,int page){
+       int size = productService.findProductByParamSize(param)/16;
+       List<Integer> pages = new ArrayList<>();
+       for(int i = 1 ; i<=size ; i++){
+           pages.add(i);
+       }
+       return pages.stream().skip(page-1).collect(Collectors.toList());
+    }
+
+    public int findLastPage(String param){
+        return productService.findProductByParamSize(param)/16;
+    }
+
+    public String leftArrow(){
+        return ">";
+    }
+
+    public String rightArrow(){
+        return "<";
+    }
+
+    public int limitSize(int totalPage , int page){
+        if(totalPage-page>5)
+            return 5;
+        else
+            return totalPage-page;
+    }
+
+    public int findCount(String param){
+        return productService.findProductByParamSize(param);
     }
 }

@@ -52,8 +52,8 @@ public class ProductService {
         return productDao.delete(productDtoManager.transferProductDtoToEntity(productDto));
     }
 
-    public List<ProductDto> findProductByParam(String param){
-        String url = "http://localhost:8090/api/products/" + param;
+    public List<ProductDto> findProductByParam(String param , int page){
+        String url = "http://localhost:8090/api/products/" + param + "?page=" + page;
         Client client = ClientBuilder.newClient();
         Response response = client.target(url)
                 .request(MediaType.APPLICATION_JSON)
@@ -72,5 +72,15 @@ public class ProductService {
             productDtos.add(productDto);
         });
         return productDtos;
+    }
+
+    public int findProductByParamSize(String param){
+        String url = "http://localhost:8090/api/products/size/" + param;
+        Client client = ClientBuilder.newClient();
+        Response response = client.target(url)
+                .request(MediaType.APPLICATION_JSON)
+                .get();
+        String json=response.readEntity(String.class);
+        return Integer.valueOf(json);
     }
 }
