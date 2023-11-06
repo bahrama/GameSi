@@ -1,0 +1,8 @@
+FROM openjdk:22-slim-bullseye
+WORKDIR /app/wildfly
+COPY . .
+RUN apt update && apt upgrade -y
+RUN apt install wget -y
+RUN wget https://github.com/wildfly/wildfly/releases/download/30.0.0.Final/wildfly-30.0.0.Final.tar.gz
+RUN tar -xvf wildfly-30.0.0.Final.tar.gz
+EXPOSE 8080
