@@ -5,9 +5,18 @@ RUN apt update && apt upgrade -y
 RUN apt install wget -y
 RUN wget https://github.com/wildfly/wildfly/releases/download/30.0.0.Final/wildfly-30.0.0.Final.tar.gz
 RUN tar -xvf wildfly-30.0.0.Final.tar.gz
-RUN wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.2-bin.tar.gz
-RUN tar -xvf apache-maven-3.9.2-bin.tar.gz
+RUN wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz
+RUN tar -xvf apache-maven-3.9.5-bin.tar.gz
 RUN apt install git -y
+RUN git clone https://github.com/bahrama/GameSi.git
+RUN rm -rf wildfly-30.0.0.Final/modules/system/layers/base/org/eclipse/persistence/
+RUN mv GameSi/postgresql/ wildfly-30.0.0.Final/modules/system/layers/base/org/
+RUN mv GameSi/persistence/ wildfly-30.0.0.Final/modules/system/layers/base/org/eclipse/
+RUN mkdir wildfly-30.0.0.Final/fimg
+RUN mv GameSi/standalone.xml wildfly-30.0.0.Final/standalone/configuration/
+RUN cd
+RUN echo 'export MVN_HOME=/app/wildfly/apache-maven-3.9.5/bin' >> .bashrc
+RUN echo 'export PATH=$MVN_HOME:$PATH' >> .bashrc
 EXPOSE 8080
 RUN chmod 777 entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
