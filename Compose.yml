@@ -2,3 +2,6 @@ version: "3.8"
 services:
   wildfly:
     build: .
+    volumes:
+      - /app/wildfly/wildfly-30.0.0.Final/fimg
+      - /home/dockremap/fimg:/app/wildfly/wildfly-30.0.0.Final/fimg

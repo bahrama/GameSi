@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "Starting wildfly project ...."
-bash
+/app/wildfly/wildfly-30.0.0.Final/bin/standalone.sh
