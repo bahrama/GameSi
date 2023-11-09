@@ -2,6 +2,17 @@ version: "3.8"
 services:
   wildfly:
     build: .
+    container_name: wildfly
+    hostname: wildfly
+    restart: always
     volumes:
-      - /app/wildfly/wildfly-30.0.0.Final/fimg
       - /home/dockremap/fimg:/app/wildfly/wildfly-30.0.0.Final/fimg
+    ports:
+      - '8080:8080'
+    networks:
+      - gamesi-network
+    environment:
+      MVN_HOME: /app/wildfly/apache-maven-3.9.5/bin
+      PATH: $MVN_HOME:$PATH
+networks:
+  gamesi-network:

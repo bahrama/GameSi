@@ -14,9 +14,6 @@ RUN mv GameSi/postgresql/ wildfly-30.0.0.Final/modules/system/layers/base/org/
 RUN mv GameSi/persistence/ wildfly-30.0.0.Final/modules/system/layers/base/org/eclipse/
 RUN mkdir wildfly-30.0.0.Final/fimg
 RUN mv GameSi/standalone.xml wildfly-30.0.0.Final/standalone/configuration/
-RUN cd
-RUN echo 'export MVN_HOME=/app/wildfly/apache-maven-3.9.5/bin' >> .bashrc
-RUN echo 'export PATH=$MVN_HOME:$PATH' >> .bashrc
 EXPOSE 8080
 RUN chmod 777 entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
